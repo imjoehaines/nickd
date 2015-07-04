@@ -41,11 +41,11 @@ describe('nickd', function () {
     })
 
     it('should remove a given task from the list', function () {
-        var nickd = new Nickd()
-        nickd.add('a task')
-        nickd.remove('a task')
-        expect(nickd.list).toEqual([])
-      })
+      var nickd = new Nickd()
+      nickd.add('a task')
+      nickd.remove('a task')
+      expect(nickd.list).toEqual([])
+    })
 
     it('should only remove one task', function () {
       var nickd = new Nickd()
