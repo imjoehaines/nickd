@@ -6,11 +6,11 @@ var Nickd = function () {
 }
 
 Nickd.prototype = extend(Nickd.prototype, {
-  add: function (task) {
+  add: function add (task) {
     this.list.push(task)
   },
 
-  remove: function (task) {
+  remove: function remove (task) {
     this.list = without(this.list, task)
   }
 })
