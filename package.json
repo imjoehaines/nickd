@@ -6,6 +6,9 @@
   "scripts": {
     "test": "gulp test"
   },
+  "pre-commit": [
+    "test"
+  ],
   "author": "imjoehaines",
   "license": "MIT",
   "devDependencies": {
@@ -13,7 +16,8 @@
     "gulp": "^3.9.0",
     "gulp-mocha": "^2.1.2",
     "gulp-notify": "^2.2.0",
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "pre-commit": "^1.0.10"
   },
   "dependencies": {
     "lodash": "^3.10.0"
