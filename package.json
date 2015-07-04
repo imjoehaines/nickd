@@ -1,0 +1,21 @@
+{
+  "name": "nickd",
+  "version": "0.0.1",
+  "description": "Simple command line todo list app",
+  "main": "nickd.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "imjoehaines",
+  "license": "MIT",
+  "devDependencies": {
+    "expect": "^1.6.0",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.2",
+    "gulp-notify": "^2.2.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "lodash": "^3.10.0"
+  }
+}
