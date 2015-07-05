@@ -13,16 +13,6 @@ Nickd.prototype = extend(Nickd.prototype, {
 
   remove: function remove (task) {
     this.tasks = without(this.tasks, task)
-  },
-
-  list: function list () {
-    this.tasks.map(function (task) {
-      this.output(task)
-    }.bind(this))
-  },
-
-  output: function output (message) {
-    this.cli.display(message)
   }
 })
 
