@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "clicolor": "^0.9.5",
-    "lodash": "^3.10.0"
+    "commander": "^2.8.1",
+    "lodash": "^3.10.0",
+    "own-version": "0.0.2"
   }
 }

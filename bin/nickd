@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+var program = require('commander')
+var version = require('own-version')
+
+program
+  .version(version.sync())
+  .description('A simple todo list')
+  .command('add [task...]', 'Add a task')
+  .parse(process.argv)

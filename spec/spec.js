@@ -4,7 +4,7 @@ var sinon = require('sinon')
 var clicolor = require('clicolor')
 var cli = clicolor.cli()
 
-var Nickd = require('../nickd')
+var Nickd = require('../src/nickd')
 
 var describe = mocha.describe
 var it = mocha.it

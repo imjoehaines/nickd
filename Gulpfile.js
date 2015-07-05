@@ -8,7 +8,7 @@ gulp.task('test', function () {
   var reporter = watch ? 'min' : 'spec'
 
   return gulp.src('spec/spec.js', {read: false})
-    .pipe(mocha({reporter: reporter }))
+    .pipe(mocha({reporter: reporter}))
     .on('error', notify.onError({
       title: 'Oops!',
       message: 'Something broke'

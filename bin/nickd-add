@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+var program = require('commander')
+
+program
+  .description('Add a new task')
+  .parse(process.argv)
+
+var task = program.args.join(' ')
+console.log(task)
