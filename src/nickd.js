@@ -2,8 +2,8 @@ var extend = require('lodash/object/extend')
 var without = require('lodash/array/without')
 var contains = require('lodash/collection/contains')
 
-var Nickd = function () {
-  this.tasks = []
+var Nickd = function (tasks) {
+  this.tasks = tasks ? tasks : []
 }
 
 Nickd.prototype = extend(Nickd.prototype, {

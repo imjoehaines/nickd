@@ -23,6 +23,11 @@ describe('nickd', function () {
     expect(nickd.tasks).toEqual([])
   })
 
+  it('should accept a list of tasks as an argument', function () {
+    expect(new Nickd(['a task']).tasks).toEqual(['a task'])
+    expect(new Nickd(['a task', 'another task']).tasks).toEqual(['a task', 'another task'])
+  })
+
   describe('add', function () {
     it('should exist', function () {
       expect(nickd.add).toExist()
