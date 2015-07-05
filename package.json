@@ -25,6 +25,7 @@
   "dependencies": {
     "commander": "^2.8.1",
     "lodash": "^3.10.0",
-    "own-version": "0.0.2"
+    "own-version": "0.0.2",
+    "prettiest": "^0.1.0"
   }
 }

@@ -71,3 +71,5 @@ node_modules
 # Debug log from npm
 npm-debug.log
 
+bin/data.json
+bin/data.json.lock
