@@ -4,3 +4,6 @@ node_js:
   - "iojs"
 before_install:
   - npm install -g gulp
+script:
+  - npm test
+  - npm run lint
