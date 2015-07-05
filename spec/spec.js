@@ -1,7 +1,7 @@
 var mocha = require('mocha')
 var expect = require('expect')
 
-var Nickd = require('../src/nickd')
+var Nickd = require('../nickd')
 
 var describe = mocha.describe
 var it = mocha.it

@@ -23,9 +23,6 @@
     "standard": "^4.5.2"
   },
   "dependencies": {
-    "chalk": "^1.1.0",
-    "lodash": "^3.10.0",
-    "own-version": "0.0.2",
-    "prettiest": "^0.1.0"
+    "lodash": "^3.10.0"
   }
 }
