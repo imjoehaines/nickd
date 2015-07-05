@@ -1,9 +1,27 @@
 #!/usr/bin/env node
-var program = require('commander')
-var version = require('own-version')
+var map = require('lodash/collection/map')
+var version = require('own-version').sync()
+var cli = require('../src/cli')
 
-program
-  .version(version.sync())
-  .description('A simple todo list')
-  .command('add [task...]', 'Add a task')
-  .parse(process.argv)
+var command = process.argv[2]
+var args = process.argv.slice(3)
+
+var help = function help (command) {
+  if (command) {
+    console.log('Oops!')
+    console.log('I don\'t know what "%s" is :(', command)
+  }
+
+  console.log('Available commands:')
+  map(cli.commands, function (command) {
+    console.log(' nickd %s - %s', command.help, command.description)
+  })
+}
+
+console.log('nickd v%s', version)
+if (cli.commands[command]) {
+  cli.commands[command].func(args)
+} else {
+  command = command === 'help' ? null : command
+  help(command)
+}
