@@ -1,5 +1,6 @@
 var data = require('prettiest')()
 var map = require('lodash/collection/map')
+var chalk = require('chalk')
 
 var Nickd = require('../src/nickd')
 var nickd = new Nickd(data.tasks)
@@ -12,18 +13,27 @@ function add (task) {
   }
 }
 
-function remove (task) {
-  if (task) {
+function remove (index) {
+  if (index) {
+    nickd.remove(index)
+    data.tasks = nickd.tasks
+  }
+}
+
+function edit (args) {
+  var index = args[0]
+  var task = args.slice(1)
+
+  if (index && task) {
     task = task.join(' ')
-    nickd.remove(task)
+    nickd.edit(index, task)
     data.tasks = nickd.tasks
   }
 }
 
 function list () {
   map(nickd.tasks, function (task, index) {
-    var taskNumber = index + 1
-    console.log('%s: %s', taskNumber, task)
+    console.log('%s: %s', index + 1, chalk.blue(task))
   })
 }
 
@@ -37,14 +47,20 @@ module.exports = {
 
     'remove': {
       func: remove,
-      description: 'Removes a new task',
-      help: 'remove <task>'
+      description: 'Removes a task',
+      help: 'remove <task number>'
+    },
+
+    'edit': {
+      func: edit,
+      description: 'Edits a task',
+      help: 'edit <task number> <edited task>'
     },
 
     'list': {
       func: list,
       description: 'Lists all tasks',
-      help: 'list <task>'
+      help: 'list'
     }
   }
 }

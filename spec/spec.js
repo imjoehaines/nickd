@@ -52,21 +52,21 @@ describe('nickd', function () {
 
     it('should remove a given task from the list', function () {
       nickd.add('a task')
-      nickd.remove('a task')
+      nickd.remove(1)
       expect(nickd.tasks).toEqual([])
     })
 
     it('should only remove one task', function () {
       nickd.add('a task')
       nickd.add('another task')
-      nickd.remove('a task')
+      nickd.remove(1)
       expect(nickd.tasks).toEqual(['another task'])
     })
 
     it('should do nothing when the given task isn\'t in the list', function () {
       nickd.add('a task')
       nickd.add('another task')
-      nickd.remove('a non-existent task')
+      nickd.remove(3)
       expect(nickd.tasks).toEqual(['a task', 'another task'])
     })
   })
@@ -78,13 +78,13 @@ describe('nickd', function () {
 
     it('should edit a given task', function () {
       nickd.add('a task')
-      nickd.edit('a task', 'an edited task')
+      nickd.edit(1, 'an edited task')
       expect(nickd.tasks).toEqual(['an edited task'])
     })
 
     it('should do nothing when the given task doesn\'t exist', function () {
       nickd.add('a task')
-      nickd.edit('a task that does not exist', 'an edited task')
+      nickd.edit(200, 'an edited task')
       expect(nickd.tasks).toEqual(['a task'])
     })
 
@@ -92,7 +92,7 @@ describe('nickd', function () {
       nickd.add('a task')
       nickd.add('another task')
       nickd.add('some other task')
-      nickd.edit('a task', 'an edited task')
+      nickd.edit(1, 'an edited task')
       expect(nickd.tasks).toEqual(['an edited task', 'another task', 'some other task'])
     })
 
@@ -100,7 +100,7 @@ describe('nickd', function () {
       nickd.add('a task')
       nickd.add('another task')
       nickd.add('some other task')
-      nickd.edit('another task', 'another edited task')
+      nickd.edit(2, 'another edited task')
       expect(nickd.tasks).toEqual(['a task', 'another edited task', 'some other task'])
     })
   })

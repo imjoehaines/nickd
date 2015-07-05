@@ -1,6 +1,4 @@
 var extend = require('lodash/object/extend')
-var without = require('lodash/array/without')
-var contains = require('lodash/collection/contains')
 
 var Nickd = function (tasks) {
   this.tasks = tasks ? tasks : []
@@ -11,13 +9,17 @@ Nickd.prototype = extend(Nickd.prototype, {
     this.tasks.push(task)
   },
 
-  remove: function remove (task) {
-    this.tasks = without(this.tasks, task)
+  remove: function remove (index) {
+    index = index - 1
+    if (this.tasks.length > index) {
+      this.tasks.splice(index, 1)
+    }
   },
 
-  edit: function edit (task, edit) {
-    if (contains(this.tasks, task)) {
-      this.tasks[this.tasks.indexOf(task)] = edit
+  edit: function edit (index, edit) {
+    index = index - 1
+    if (this.tasks.length > index) {
+      this.tasks[index] = edit
     }
   }
 })
