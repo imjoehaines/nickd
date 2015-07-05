@@ -17,11 +17,9 @@
     "gulp-mocha": "^2.1.2",
     "gulp-notify": "^2.2.0",
     "mocha": "^2.2.5",
-    "pre-commit": "^1.0.10",
-    "sinon": "^1.15.4"
+    "pre-commit": "^1.0.10"
   },
   "dependencies": {
-    "clicolor": "^0.9.5",
     "commander": "^2.8.1",
     "lodash": "^3.10.0",
     "own-version": "0.0.2"

@@ -1,8 +1,5 @@
 var mocha = require('mocha')
 var expect = require('expect')
-var sinon = require('sinon')
-var clicolor = require('clicolor')
-var cli = clicolor.cli()
 
 var Nickd = require('../src/nickd')
 

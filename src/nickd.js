@@ -1,9 +1,8 @@
 var extend = require('lodash/object/extend')
 var without = require('lodash/array/without')
 
-var Nickd = function (cli) {
+var Nickd = function () {
   this.tasks = []
-  this.cli = cli ? cli : require('clicolor').cli()
 }
 
 Nickd.prototype = extend(Nickd.prototype, {
